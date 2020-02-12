@@ -1,45 +1,54 @@
 <?php
 class Model
 {
-	public $string;
+public $string;
 
-	public function __construct(){
-	   $this->string = "Using PHP in MVC! Inside the model";
-        }
+public function __construct(){
+  $this->string = "Using PHP in MVC! Inside the Model";
+  }
 }
 
 class View
 {
-	private $model;
-	private $controller;
-
-	public function_construct($controller, $model) {
-		$this->controller = $controller;
-		$this->model = $model;
-	}
-
-	public function output() {
-		return '<p><a> href="mvc.php?action=clicked">'.$this->model->string."</a><p>";
-	}
-}
-
-class Controller
-{
-	public $model;
+  private $model;
+  private $controller;
 	
-	public function __construct($model){
- 	  $this->model = $model;
-	}
+  
+  public function __construct($model,$controller){
+    $this->model = $model;
+    $this->controller= $controller;
+   }
+   
+   public function output(){
+      
+     return '<p><a href = "mvc.php?action=clicked">'.$this->model->string."</a><p>";
+      }
+   }
 
-	public function clicked() {
-	 $this->model->string = "using the controller to update the view";
-        }
-}
+ 
+ class Controller
+{
+  private $model;
+  
+  public function __construct($model){
+    $this->model = $model;
+    
+   }
+   
+   public function clicked(){
+      
+      $this->model->string = "using the controller to update the view";
+     
+      }
+   }
+   
+   $modelmvc = new model();
+   $controllermvc = new controller($modelmvc);
+   $viewmvc = new View($modelmvc,$controllermvc);
+   echo $viewmvc->output();
 
-$modelmvc = new model();
-$controllermvc = new controller($modelmvc);
-$viewmvc = new View($modelmvc,$controllermvc);
-echo $viewmvc->output();
-
-
-?>
+   //. is the same as ->
+   
+   
+   
+  ?>
