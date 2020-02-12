@@ -32,13 +32,14 @@ class Controller
 	}
 
 	public function clicked() {
-	  $this->model->string = "using the controller to update the view";
+	 $this->model->string = "using the controller to update the view";
         }
 }
 
-$modelmvc = new Model();
-$controllermvc = new Controller($modelmvc);
-$viewmvc = new View ($modelmvc,$controllermvc);
+$modelmvc = new model();
+$controllermvc = new controller($modelmvc);
+$viewmvc = new View($modelmvc,$controllermvc);
 echo $viewmvc->output();
+
 
 ?>
