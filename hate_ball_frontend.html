@@ -3,7 +3,7 @@
 		<title>My First Javascript Query</title>
 	</head>
 	<body onload="makeRequest();">
-	
+
 <script>
   	var req;
 
@@ -42,7 +42,7 @@
 	  selected_type = ball_type.options[selected_type_index].value;
 
 
-	  req.open("GET", "http://imaginary-realities.com/hate_ball_get_post_no_format.php?question=" + question + "&action=" + selected_type, true);
+	  req.open("GET", "https://powerful-inlet-27184.herokuapp.com/hate_ball_frontend.html?question=" + question + "&action=" + selected_type, true);
   	req.send();
 
 	}
