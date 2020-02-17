@@ -7,7 +7,7 @@
 <?php
 include 'navigation.php';
 
-echo "Hello World! From Pam again";
+echo "Hello World! From Satya again";
 ?>
 
 </body>
