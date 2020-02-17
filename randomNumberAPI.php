@@ -26,7 +26,7 @@
     $cl .= ' -x '.$max;
   }
 
-  //echo $cl;
+  echo $cl;
   $output = shell_exec($cl);
 
   echo $output;
